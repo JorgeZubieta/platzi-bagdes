@@ -1,9 +1,6 @@
 import React from 'react';
-
 import conflogo from '../images/badge-header.svg';
-
 import "./styles/Badge.css";
-
 // las clases son componentens entonces la  clase badge extiende a la clase react.component
 class Badge extends React.Component {
     render() {
@@ -14,13 +11,14 @@ class Badge extends React.Component {
             </div>
 
             <div className="Badge__section-name">
-                <img className="Badge__avatar" src="https://secure.gravatar.com/avatar/e369444fbda201a6d3fca939daec8ed8" alt="Gravatar"/>
-                <h1>Jorge <br/> Zubieta</h1>
+                <img className="Badge__avatar" src={this.props.avatarUrl} alt="Gravatar"/>
+                <h1>{this.props.firstName} <br/> {this.props.lastName}</h1>
             </div>
 
             <div className="Badge__section-info">
-                <h3>Frontend Developer</h3>
-                <div>@jorgezubieta</div>
+                <h3>{this.props.jobTitle}</h3>
+                {/* dejo el @fuera de los brakets */}
+                <div>@{this.props.twitter}</div>
             </div>
 
             <div className="Badge__footer">
